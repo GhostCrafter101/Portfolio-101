@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: coolvetica;
+  src: url(assets/coolvetica.otf);
+}
+
+@font-face {
+  font-family: euclid;
+  src: url(assets/euclid.ttf);
+}
+
+@font-face {
+  font-family: euclidbold;
+  src: url(assets/euclidbold.ttf);
+}
+body{
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+  overflow-y: auto;
+  /* Allows vertical scrolling */
+}
+.main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://source.unsplash.com/1920x1080/?programming);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* To make linear gradient stay fixed to viewport */
+  z-index: 1;
+}
+
+.navbar {
+  float: right;
+  list-style-type: none;
+  padding-right: 15px;
+}
+
+.navbar li {
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 10px;
+  z-index: 10;
+}
+
+/* Button styling */
+.menu-toggle button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Hide the default navbar list on small screens */
+@media (max-width: 849px) {
+  .navbar {
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 12;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, -webkit-max-height 0.5s ease;
+    display: flex;
+    /* Add this line to ensure consistent styles */
+    flex-direction: column;
+    /* Add this line for vertical stacking */
+  }
+
+  .navbar.active {
+    /* display: flex; */
+    max-height: 500px
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 849px) {
+  .menu-toggle button {
+    display: block;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+}
+
+/* For dekstop */
+@media (min-width: 850px) {
+  .menu-toggle button {
+    display: none;
+  }
+
+  .navbar {
+    z-index: 100;
+  }
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-family: euclidbold;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.3s;
+}
+
+.navbar li.active a {
+  color: #111;
+  background: #ffffff;
+  box-shadow: inset 0 0 300px #ffffff;
+  border-radius: 20px;
+}
+
+.navbar li a:hover {
+  color: #111;
+  background: #ffffff;
+  box-shadow: inset 0 0 300px #ffffff;
+  border-radius: 20px;
+}
+
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .navbar li a {
+    font-size: 1.757vw;
+    padding: 0.366vw 1.464vw;
+    padding-top: 5px;
+  }
+
+  .navbar {
+    padding-top: 2vw;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .navbar li a {
+    font-size: 3vh;
+  }
+}
+
+.title {
+  font-family: euclidbold;
+  color: #ffffff;
+  line-height: 0.9;
+  float: left;
+}
+
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .title {
+    font-size: 7.4vw;
+    padding-left: 2vw;
+    padding-top: 10vw;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .title {
+    font-size: 7.4vh;
+    padding-left: 2vh;
+    padding-top: 24vh;
+  }
+}
+
+.name {
+  color: #00eeff;
+}
+
+.name:hover {
+  color: #ffffff;
+  box-shadow: 0 0 50px #1d1d1d;
+}
+
+.btn1 {
+  padding-right: 350px;
+  position: absolute;
+  padding-left: 40px;
+}
+
+.btn1 button {
+  width: 13.3vw;
+  height: 3.3vw;
+  border: none;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.3s;
+  font-size: 2.5vw;
+  font-family: euclidbold;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .btn1 button {
+    width: 13.9vw;
+    height: 3.9vw;
+    font-size: 2.5vw;
+  }
+
+  .btn1 {
+    padding-right: 25.622vw;
+    padding-top: 35vw;
+    padding-left: 2.928vw;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .btn1 button {
+    width: 24vh;
+    height: 9vh;
+    font-size: 4.5vh;
+  }
+
+  .btn1 {
+    padding-right: 25.622vh;
+    padding-top: 56vh;
+    position: absolute;
+    padding-left: 2.928vh;
+  }
+}
+
+.btn1 button:hover {
+  box-shadow: inset 300px 0 0 0 #ffffff;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Section 2 : Video */
+.video{
+  /* max-width: 100%; */
+  max-height: 100vh;
+}
+.newsection {
+  /* background-video: url('assets/bg2original.jpg'); */
+  /* background-size: cover; */
+  /* background-position: bottom; */
+  position: relative;
+  width: 100%;
+  top: 100%;
+  z-index: -1;
+}
+video{
+  z-index: -1;
+}
+.gradient-overlay {
+  top: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: -1;
+}
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .newsection {
+    width: 100%;
+    top: 100%;
+    object-fit: cover;
+  }
+  video{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+ }
+  .gradient-overlay{
+    height: 115.5vh;
+    object-fit: cover;
+    width: 100%;
+ }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .newsection {
+    width: 100%;
+    top: 100%;
+  }
+  video{
+    width: 100vw;
+    height: 55vh;
+    scale: 4;
+    object-fit: cover;
+    z-index: -1;
+ }
+  .gradient-overlay{
+    height: 48.5vh;
+    scale: 5;
+    width: 100vw;
+ }
+}
+/* Video Text Styles */
+.videotext {
+  font-family: euclidbold;
+  position: absolute;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .videotext {
+    font-size: 6.223vw;
+    bottom: -480px;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .videotext {
+    font-size: 6.5vh;
+    bottom: -600px;
+  }
+}
+.color1{
+  color: red;
+}
+.color2{
+  color: blue;
+}
+/* iframe {
+  position: relative;
+  bottom: 30px;
+   left: 300px; 
+} */
+.langs{
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none; 
+}
+.langs li{
+  z-index: 20;
+  position: relative;
+  /* transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: transform; */
+  /* transition: transform 0.2s ease 0s; */
+  transition: transform 0.2s ease 0s, color 0.2s ease 0s;
+}
+/* Media query for desktop */
+@media (min-width: 850px) {
+  .langs{
+    bottom: -80%;
+    width: 100%;
+  }
+  .langs li {
+    scale: 1.8;
+    margin-left: 75px;
+  }
+  .langs li:hover{
+    transform: scale(2);
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 849px) {
+  .langs{
+    bottom: -100%;
+    width: 100%;
+    right: 13px;
+  }
+  .langs li {
+    scale: 1.4;
+    margin-left: 25px;
+  }
+  .langs li:hover{
+    transform: scale(1.5);
+  }
+}
+.langs li span {
+  position: absolute;
+  bottom: -30px; /* Adjust the distance from the list item */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-family: euclidbold;
+  color: white;
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.2s ease 0s;
+  text-shadow: 0 0 1.2px #ffffff;
+}
+.langs li:hover span {
+  opacity: 1; /* Show the text on hover */
+}
